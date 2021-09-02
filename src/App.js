@@ -14,11 +14,10 @@ const App =() =>{
   }
 //This code is what fetches the cart from the API
   const fetchCart = async () =>{
-    const cart = await commerce.cart.retrieve();
-    setCart(cart)
+    setCart(await commerce.cart.retrieve());
   }
 //This function handles the addition to the carts 
-  const handleAddToCart = async (productId,quantity) => {
+  const handleAddToCart = async ( productId, quantity) => {
     const item = await commerce.cart.add(productId, quantity);
 
     setCart(item.cart);
@@ -28,13 +27,13 @@ const App =() =>{
     fetchProducts();
     fetchCart();
   },[]);
-  console.log(products);
+  console.log(cart);
   return(
     <div>
-      <Navbar totalItems={cart.total_items}/>
+      <Navbar totalItems = {cart.total_items}/>
       {/* <Products products={products} onAddToCart={handleAddToCart}/> */}
       <Cart cart={cart}/>
-
+      
     </div>
   )
 }
