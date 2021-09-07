@@ -30,7 +30,7 @@ const Cart = ({cart, handleEmptyCart, handleRemoveFromCart,handleUpdateCartQty})
                 </Typography>
                 <div>
                     <Button className={classes.emptyButton} size='large' type="button" variant='contained' color='secondary' onClick={handleEmptyCart}> Empty Cart!</Button>
-                    <Button component={Link} to='/checkout' className={classes.emptyButton} size='large' type="button" variant='contained' color='primary' > Checkout</Button>
+                    <Button component={Link} to='/checkout' className={classes.checkoutButton} size='large' type="button" variant='contained' color='primary' > Checkout</Button>
                 </div>
             </div>
         </>
@@ -40,7 +40,7 @@ const Cart = ({cart, handleEmptyCart, handleRemoveFromCart,handleUpdateCartQty})
     return (
         <Container >
             <div className={classes.toolbar}/>
-            <Typography className={classes.title} varieant='h3' gutterBottom>Your Shopping cart</Typography>
+            <Typography className={classes.title} varieant="h3" gutterBottom>Your Shopping cart</Typography>
             {!cart.line_items.length ? <EmptyCart/> : <FilledCart/>}
         </Container>
     )

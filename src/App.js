@@ -22,13 +22,13 @@ const App =() =>{
   }
 //This function handles the addition to the carts 
   const handleAddToCart = async ( productId, quantity) => {
-    const {cart} = await commerce.cart.add(productId, quantity);
+    const {cart}= await commerce.cart.add(productId, quantity);
 
     setCart(cart);
   }
   const handleUpdateCartQty= async (productId, quantity) =>{
     const {cart}= await commerce.cart.update(productId,{quantity});
-    setCart(cart)
+    setCart(cart);
   } 
   const handleRemoveFromCart = async(productId) =>{
     const {cart} = await commerce.cart.remove(productId);
@@ -39,19 +39,20 @@ const App =() =>{
     setCart(cart);
   }
   const refreshCart= async () =>{
-    const newCart=await commerce.cartrefresh();
+    const newCart=await commerce.cart.refresh();
     setCart(newCart);
   }
   const handleCaptureCheckout = async (checkoutTokenId,newOrder) =>{
     try{
       const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder);
       setOrder(incomingOrder);
+      console.log(incomingOrder);
       refreshCart();
     }catch(error){
       setErrorMessage(error.data.error.message)
-    }
+    };
   }
-//These are the functions that are fetched on the laod screen
+
   useEffect(() =>{
     fetchProducts();
     fetchCart();
@@ -75,11 +76,11 @@ const App =() =>{
             />
           </Route>
           <Route exact path ='/checkout'>
-            <Checkout cart = {cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage}/>
+            <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage}/>
           </Route>
         </Switch>
       </div>
     </Router>
   )
 }
-export default App;
+export default App

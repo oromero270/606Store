@@ -18,17 +18,19 @@ const handleSubmit = async (event, elements, stripe) => {
     const { error, paymentMethod } = await stripe.createPaymentMethod({ type: 'card', card: cardElement });
 
     if (error) {
-    console.log('[error]', error);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$");
+        console.log('[error]', error);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$");
     } else {
     const orderData = {
         line_items: checkoutToken.live.line_items,
         customer: { firstname: shippingData.firstName, lastname: shippingData.lastName, email: shippingData.email },
-        shipping: { name: 'Prime', street: shippingData.address1, town_city: shippingData.city, county_state: shippingData.shippingSubdivision, postal_zip_code: shippingData.zip, country: shippingData.shippingCountry },
+        shipping: { name: 'primary', street: shippingData.address1, town_city: shippingData.city, county_state: shippingData.shippingSubdivision, postal_zip_code: shippingData.zip, country: shippingData.shippingCountry },
         fulfillment: { shipping_method: shippingData.shippingOption },
         payment: {
         gateway: 'stripe',
         stripe: {
-            payment_method_id: paymentMethod.id,
+            payment_method_id: paymentMethod.id
         },
         },
     };
