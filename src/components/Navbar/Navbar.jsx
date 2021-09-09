@@ -23,7 +23,7 @@ const Navbar = ({ totalItems }) => {
                 <Toolbar>
                     <Typography component={Link} to='/' variant="h6" className={classes.title} color='inherit'>
                         <img src={logo} alt='commerce.js' height='25px' className={classes.image} />
-                        606 MicroGreens
+                        606 Microgreens
                     </Typography>
                     <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} >
                         Open Menu
@@ -36,9 +36,9 @@ const Navbar = ({ totalItems }) => {
                         onClose={handleClose}
                     >
                         <MenuItem component={Link} to='/about' onClick={handleClose}>About Us</MenuItem>
-                        <MenuItem onClick={handleClose}>Health Facts</MenuItem>
+                        <MenuItem onClick={handleClose} component={Link} to='/research'>Research</MenuItem>
                         <MenuItem onClick={handleClose}>Create Account</MenuItem>
-                        <MenuItem onClick={handleClose}>Log In</MenuItem>
+                        <MenuItem component={Link} to='/cart'onClick={handleClose}>Checkout</MenuItem>
                     </Menu>
                     <div className={classes.grow} />
                     {location.pathname === '/' && (

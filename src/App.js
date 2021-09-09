@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from './lib/commerce';
-import { Products, Navbar, Cart, Checkout } from './components';
+import { Products, Navbar, Cart, Checkout, About,Research } from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import About from './components/About';
+
 
 
 const App = () => {
@@ -60,7 +60,6 @@ const App = () => {
   console.log(cart);
   return (
     <Router>
-
       <div>
         <Navbar totalItems={cart.total_items} />
         <Switch>
@@ -78,8 +77,11 @@ const App = () => {
           <Route exact path='/checkout'>
             <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} />
           </Route>
-          <Route exact path ='/about'>
+          <Route exact path='/about' >
             <About />
+          </Route>
+          <Route exact path='/research'>
+            <Research />
           </Route>
         </Switch>
       </div>
