@@ -3,6 +3,11 @@ import { makeStyles, fade } from '@material-ui/core/styles';
 const drawerWidth = 0;
 
 export default makeStyles((theme) => ({
+  menu: {
+    "& .MuiPaper-root": {
+      backgroundColor: "lightblue"
+    }
+  },
   appBar: {
     boxShadow: 'none',
     borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
@@ -55,6 +60,7 @@ export default makeStyles((theme) => ({
   inputRoot: {
     color: 'inherit',
   },
+  
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
@@ -64,5 +70,7 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       width: '20ch',
     },
+    
   },
+
 }));

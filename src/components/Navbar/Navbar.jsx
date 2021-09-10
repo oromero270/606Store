@@ -34,10 +34,11 @@ const Navbar = ({ totalItems }) => {
                         keepMounted
                         open={Boolean(anchorEl)}
                         onClose={handleClose}
+                        className={classes.menu}
                     >
-                        <MenuItem component={Link} to='/about' onClick={handleClose}>About Us</MenuItem>
+                        <MenuItem component={Link} to='/' onClick={handleClose}>Shop</MenuItem>
+                        <MenuItem component={Link} to='/about' onClick={handleClose}>About</MenuItem>
                         <MenuItem onClick={handleClose} component={Link} to='/research'>Research</MenuItem>
-                        <MenuItem onClick={handleClose}>Create Account</MenuItem>
                         <MenuItem component={Link} to='/cart'onClick={handleClose}>Checkout</MenuItem>
                     </Menu>
                     <div className={classes.grow} />
