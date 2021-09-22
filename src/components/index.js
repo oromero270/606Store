@@ -5,3 +5,4 @@ export { default as Cart } from './Cart/Cart';
 export { default as Checkout } from './CheckoutForm/Checkout/Checkout';
 export { default as About } from './About/About';
 export { default as Research } from './About/Research';
+export { default as Landing } from './Landing/Landing';
