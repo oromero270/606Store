@@ -8,7 +8,7 @@ const Research = () => {
     return (
         <>
         <Divider className={classes.divider} />
-        <Typography>Howdy</Typography>
+        <Typography>Comiming soon (updated 9/22/21)</Typography>
         </>
     )
 }
