@@ -7,7 +7,7 @@ import {
   Checkout,
   About,
   Research,
-  Landing,
+  Footer,
 } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -77,6 +77,7 @@ const App = () => {
           </Route> */}
           <Route exact path="/">
             <Products products={products} onAddToCart={handleAddToCart} />
+            <Footer/>
           </Route>
           <Route exact path="/cart">
             <Cart
