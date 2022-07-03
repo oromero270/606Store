@@ -14,14 +14,12 @@ const About = () => {
             <Card className={classes.root} >
                 <CardContent>
                     <Typography variant="body2" component="p" className={classes.aboutUs} >
-                        606Microgreens was started in 2020 by Osvaldo Romero and his family. They operate out of a small studio in the Humboldt Park area and offer their services along the bike trail “The 606” to both the public and businesses in the area.The public enjoys the multiple nutritional benefits from these young plants.While the restaurants chefs can enjoy the beautiful colors and unique flavors produced by microgreens such as radish.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis numquam reiciendis maiores explicabo odit necessitatibus nam obcaecati saepe aut dolores cumque laudantium, natus doloremque expedita veniam nesciunt unde, dolore reprehenderit?
                         <br />
                         <br />
                     </Typography>
                     <Typography className={classes.quote}>
-                        {'"I saw there was a shortage of local producers of microgreens in my community so I decided to step up and offer home delivery to those in my area. The more people know about microgreens the healthier we can become as a community! "'}
-                        <br />
-                        -Osvaldo Romero
+                    
                     </Typography>
                 </CardContent>
                 <CardActions style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
